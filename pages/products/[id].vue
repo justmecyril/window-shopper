@@ -1,9 +1,6 @@
 <template>
   <div>
-    <p>{{ product.title }}</p>
-    <p>{{ product.price }}</p>
-    <p>{{ product.id }}</p>
-    <p>{{ product.description }}</p>
+    <ProductDetails :product="product" />
   </div>
 </template>
  
@@ -12,10 +9,18 @@ definePageMeta({
   layout: "products",
 });
 const { id } = useRoute().params;
-const uri = "https://api.escuelajs.co/api/v1/products/" + id;
+const uri = "https://fakestoreapi.com/products/" + id;
 
 // fetch the product
-const { data: product } = await useFetch(uri, {key: id});
+const { data: product } = await useFetch(uri, { key: id });
+
+if (!product.value) {
+  throw createError({
+    statusCode: 404,
+    statusMessage: "Product not found",
+    fatal: true,
+  });
+}
 </script> 
 
 <style  scoped>

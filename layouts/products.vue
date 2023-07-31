@@ -2,7 +2,7 @@
   <div>
     
     <header class="shadow-md bg-white">
-      <nav class="container  p-4 mx-auto">
+      <nav class="container  p-4 mx-auto bg-gradient-to-r from-pink-500 to-violet-500 text-transparent bg-clip-text">
         <NuxtLink to="/products" class="font-bold">Window Shopper</NuxtLink>
        
       </nav>

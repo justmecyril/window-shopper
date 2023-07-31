@@ -9,6 +9,9 @@ body {
 
 @layer components {
     .btn {
-        @apply bg-[#800080] text-white px-3 py-2 rounded-md text-sm
+        @apply bg-gradient-to-r from-pink-500 to-violet-500 text-white px-3 py-2 rounded-md text-sm
+    }
+    .card {
+        @apply p-3 rounded-md bg-white shadow-md h-full
     }
 }
